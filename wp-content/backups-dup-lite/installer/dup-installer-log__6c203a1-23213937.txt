@@ -1,0 +1,386 @@
+********************************************************************************
+* DUPLICATOR-PRO: Install-Log
+* STEP-1 START @ 06:55:37
+* VERSION: 1.3.38
+* NOTICE: Do NOT post to public sites or forums!!
+********************************************************************************
+PACKAGE INFO________ CURRENT SERVER                         |ORIGINAL SERVER
+PHP VERSION_________: 7.2.22                                |7.1.26
+OS__________________: WINNT                                 |Linux
+CREATED_____________: 2020-09-23 21:39:37
+WP VERSION__________: 5.4.2
+DUP VERSION_________: 1.3.38
+DB__________________: 8.0.15
+DB TABLES___________: 13
+DB ROWS_____________: 4,713
+DB FILE SIZE________: 4MB
+********************************************************************************
+SERVER INFO
+PHP_________________: 7.1.26 | SAPI: apache2handler
+PHP MEMORY__________: 1024M | SUHOSIN: disabled
+SERVER______________: Apache/2.4.7
+DOC ROOT____________: "/home/c/cw17100/bonolit/public_html"
+DOC ROOT 755________: true
+LOG FILE 644________: true
+REQUEST URL_________: "http://climatec.kahn.agency/dup-installer/main.installer.php"
+********************************************************************************
+USER INPUTS
+ARCHIVE ENGINE______: "shellexec_unzip"
+SET DIR PERMS_______: 1
+DIR PERMS VALUE_____: 1363
+SET FILE PERMS______: 1
+FILE PERMS VALUE____: 1204
+SAFE MODE___________: "0"
+LOGGING_____________: "1"
+CONFIG MODE_________: "NEW"
+FILE TIME___________: "current"
+********************************************************************************
+
+
+--------------------------------------
+ARCHIVE SETUP
+--------------------------------------
+NAME________________: "/home/c/cw17100/bonolit/public_html/20200922_climatec_[HASH]_20200923213937_archive.zip"
+SIZE________________: 30.79MB
+
+PRE-EXTRACT-CHECKS
+- PASS: Apache '.htaccess' not found - no backup needed.
+- PASS: Microsoft IIS 'web.config' not found - no backup needed.
+- PASS: WordFence '.user.ini' not found - no backup needed.
+
+
+START ZIP FILE EXTRACTION SHELLEXEC >>> 
+<<< Shell-Exec Unzip Complete.
+--------------------------------------
+POST-EXTACT-CHECKS
+--------------------------------------
+PERMISSION UPDATES:
+    -DIRS:  '755'
+    -FILES: '644'
+
+STEP-1 COMPLETE @ 06:55:38 - RUNTIME: 0.8948 sec.
+
+
+
+********************************************************************************
+* DUPLICATOR-LITE INSTALL-LOG
+* STEP-2 START @ 06:56:28
+* NOTICE: Do NOT post to public sites or forums!!
+********************************************************************************
+USER INPUTS
+VIEW MODE___________: "basic"
+DB ACTION___________: "empty"
+DB HOST_____________: "**OBSCURED**"
+DB NAME_____________: "**OBSCURED**"
+DB PASS_____________: "**OBSCURED**"
+DB PORT_____________: "**OBSCURED**"
+NON-BREAKING SPACES_: false
+MYSQL MODE__________: "DEFAULT"
+MYSQL MODE OPTS_____: ""
+CHARSET_____________: "utf8"
+COLLATE_____________: "utf8_general_ci"
+COLLATE FB__________: false
+VIEW CREATION_______: true
+STORED PROCEDURE____: true
+********************************************************************************
+
+--------------------------------------
+DATABASE-ENVIRONMENT
+--------------------------------------
+MYSQL VERSION:	This Server: 5.6.39 -- Build Server: 8.0.15
+FILE SIZE:	dup-database__[HASH].sql (1.34MB)
+TIMEOUT:	5000
+MAXPACK:	20971520
+SQLMODE:	NOT_SET
+NEW SQL FILE:	[/home/c/cw17100/bonolit/public_html/dup-installer/dup-installer-data__[HASH].sql]
+COLLATE FB:	Off
+
+NOTICE: This servers version [5.6.39] is less than the build version [8.0.15].  
+If you find issues after testing your site please referr to this FAQ item.
+https://snapcreek.com/duplicator/docs/faqs-tech/#faq-installer-260-q
+--------------------------------------
+DATABASE RESULTS
+--------------------------------------
+DB VIEWS:	enabled
+DB PROCEDURES:	enabled
+ERRORS FOUND:	0
+DROPPED TABLES:	0
+RENAMED TABLES:	0
+QUERIES RAN:	125
+
+wp_commentmeta: (0)
+wp_comments: (1)
+wp_duplicator_packages: (0)
+wp_links: (0)
+wp_options: (131)
+wp_postmeta: (4224)
+wp_posts: (199)
+wp_term_relationships: (19)
+wp_term_taxonomy: (3)
+wp_termmeta: (0)
+wp_terms: (3)
+wp_usermeta: (25)
+wp_users: (1)
+Removed '24' cache/transient rows
+
+INSERT DATA RUNTIME: 0.7602 sec.
+STEP-2 COMPLETE @ 06:56:28 - RUNTIME: 0.7648 sec.
+
+====================================
+SET SEARCH AND REPLACE LIST
+====================================
+
+
+********************************************************************************
+DUPLICATOR PRO INSTALL-LOG
+STEP-3 START @ 06:56:55
+NOTICE: Do NOT post to public sites or forums
+********************************************************************************
+CHARSET SERVER:	"utf8"
+CHARSET CLIENT:	"utf8"
+********************************************************************************
+OPTIONS:
+blogname______________: "Climatec"
+postguid______________: false
+fullsearch____________: false
+path_old______________: "D:/OSPanel_5.3.5/domains/climatec"
+path_new______________: "/home/c/cw17100/bonolit/public_html"
+siteurl_______________: "http://climatec.kahn.agency"
+url_old_______________: "http://climatec"
+url_new_______________: "http://climatec.kahn.agency"
+maxSerializeStrlen____: 4000000
+replaceMail___________: false
+dbcharset_____________: "utf8"
+dbcollate_____________: "utf8_general_ci"
+wp_mail_______________: ""
+wp_nickname___________: ""
+wp_first_name_________: ""
+wp_last_name__________: ""
+ssl_admin_____________: false
+cache_wp______________: false
+cache_path____________: false
+exe_safe_mode_________: false
+config_mode___________: "NEW"
+********************************************************************************
+
+
+====================================
+RUN SEARCH AND REPLACE
+====================================
+
+EVALUATE TABLE: "wp_commentmeta"__________________________________[ROWS:     0][PG:   0][SCAN:no columns  ]
+
+EVALUATE TABLE: "wp_comments"_____________________________________[ROWS:     1][PG:   1][SCAN:text columns]
+	SEARCH  1:"D:/OSPanel_5.3.5/domains/climatec" ===============> "/home/c/cw17100/bonolit/public_html"
+	SEARCH  2:"D:\/OSPanel_5.3.5\/domains\/climatec" ============> "\/home\/c\/cw17100\/bonolit\/public_html"
+	SEARCH  3:"D%3A%2FOSPanel_5.3.5%2Fdomains%2Fclimatec" =======> "%2Fhome%2Fc%2Fcw17100%2Fbonolit%2Fpublic_html"
+	SEARCH  4:"D:\OSPanel_5.3.5\domains\climatec" ===============> "/home/c/cw17100/bonolit/public_html"
+	SEARCH  5:"D:\\OSPanel_5.3.5\\domains\\climatec" ============> "\/home\/c\/cw17100\/bonolit\/public_html"
+	SEARCH  6:"D%3A%5COSPanel_5.3.5%5Cdomains%5Cclimatec" =======> "%2Fhome%2Fc%2Fcw17100%2Fbonolit%2Fpublic_html"
+	SEARCH  7:"//climatec" ======================================> "//climatec.kahn.agency"
+	SEARCH  8:"\/\/climatec" ====================================> "\/\/climatec.kahn.agency"
+	SEARCH  9:"%2F%2Fclimatec" ==================================> "%2F%2Fclimatec.kahn.agency"
+	SEARCH 10:"https://climatec.kahn.agency" ====================> "http://climatec.kahn.agency"
+	SEARCH 11:"https:\/\/climatec.kahn.agency" ==================> "http:\/\/climatec.kahn.agency"
+	SEARCH 12:"https%3A%2F%2Fclimatec.kahn.agency" ==============> "http%3A%2F%2Fclimatec.kahn.agency"
+
+EVALUATE TABLE: "wp_duplicator_packages"__________________________[ROWS:     0][PG:   0][SCAN:no columns  ]
+
+EVALUATE TABLE: "wp_links"________________________________________[ROWS:     0][PG:   0][SCAN:no columns  ]
+
+EVALUATE TABLE: "wp_options"______________________________________[ROWS:   131][PG:   1][SCAN:text columns]
+	SEARCH  1:"D:/OSPanel_5.3.5/domains/climatec" ===============> "/home/c/cw17100/bonolit/public_html"
+	SEARCH  2:"D:\/OSPanel_5.3.5\/domains\/climatec" ============> "\/home\/c\/cw17100\/bonolit\/public_html"
+	SEARCH  3:"D%3A%2FOSPanel_5.3.5%2Fdomains%2Fclimatec" =======> "%2Fhome%2Fc%2Fcw17100%2Fbonolit%2Fpublic_html"
+	SEARCH  4:"D:\OSPanel_5.3.5\domains\climatec" ===============> "/home/c/cw17100/bonolit/public_html"
+	SEARCH  5:"D:\\OSPanel_5.3.5\\domains\\climatec" ============> "\/home\/c\/cw17100\/bonolit\/public_html"
+	SEARCH  6:"D%3A%5COSPanel_5.3.5%5Cdomains%5Cclimatec" =======> "%2Fhome%2Fc%2Fcw17100%2Fbonolit%2Fpublic_html"
+	SEARCH  7:"//climatec" ======================================> "//climatec.kahn.agency"
+	SEARCH  8:"\/\/climatec" ====================================> "\/\/climatec.kahn.agency"
+	SEARCH  9:"%2F%2Fclimatec" ==================================> "%2F%2Fclimatec.kahn.agency"
+	SEARCH 10:"https://climatec.kahn.agency" ====================> "http://climatec.kahn.agency"
+	SEARCH 11:"https:\/\/climatec.kahn.agency" ==================> "http:\/\/climatec.kahn.agency"
+	SEARCH 12:"https%3A%2F%2Fclimatec.kahn.agency" ==============> "http%3A%2F%2Fclimatec.kahn.agency"
+
+EVALUATE TABLE: "wp_postmeta"_____________________________________[ROWS:  4224][PG:   2][SCAN:text columns]
+	SEARCH  1:"D:/OSPanel_5.3.5/domains/climatec" ===============> "/home/c/cw17100/bonolit/public_html"
+	SEARCH  2:"D:\/OSPanel_5.3.5\/domains\/climatec" ============> "\/home\/c\/cw17100\/bonolit\/public_html"
+	SEARCH  3:"D%3A%2FOSPanel_5.3.5%2Fdomains%2Fclimatec" =======> "%2Fhome%2Fc%2Fcw17100%2Fbonolit%2Fpublic_html"
+	SEARCH  4:"D:\OSPanel_5.3.5\domains\climatec" ===============> "/home/c/cw17100/bonolit/public_html"
+	SEARCH  5:"D:\\OSPanel_5.3.5\\domains\\climatec" ============> "\/home\/c\/cw17100\/bonolit\/public_html"
+	SEARCH  6:"D%3A%5COSPanel_5.3.5%5Cdomains%5Cclimatec" =======> "%2Fhome%2Fc%2Fcw17100%2Fbonolit%2Fpublic_html"
+	SEARCH  7:"//climatec" ======================================> "//climatec.kahn.agency"
+	SEARCH  8:"\/\/climatec" ====================================> "\/\/climatec.kahn.agency"
+	SEARCH  9:"%2F%2Fclimatec" ==================================> "%2F%2Fclimatec.kahn.agency"
+	SEARCH 10:"https://climatec.kahn.agency" ====================> "http://climatec.kahn.agency"
+	SEARCH 11:"https:\/\/climatec.kahn.agency" ==================> "http:\/\/climatec.kahn.agency"
+	SEARCH 12:"https%3A%2F%2Fclimatec.kahn.agency" ==============> "http%3A%2F%2Fclimatec.kahn.agency"
+
+EVALUATE TABLE: "wp_posts"________________________________________[ROWS:   199][PG:   1][SCAN:text columns]
+	SEARCH  1:"D:/OSPanel_5.3.5/domains/climatec" ===============> "/home/c/cw17100/bonolit/public_html"
+	SEARCH  2:"D:\/OSPanel_5.3.5\/domains\/climatec" ============> "\/home\/c\/cw17100\/bonolit\/public_html"
+	SEARCH  3:"D%3A%2FOSPanel_5.3.5%2Fdomains%2Fclimatec" =======> "%2Fhome%2Fc%2Fcw17100%2Fbonolit%2Fpublic_html"
+	SEARCH  4:"D:\OSPanel_5.3.5\domains\climatec" ===============> "/home/c/cw17100/bonolit/public_html"
+	SEARCH  5:"D:\\OSPanel_5.3.5\\domains\\climatec" ============> "\/home\/c\/cw17100\/bonolit\/public_html"
+	SEARCH  6:"D%3A%5COSPanel_5.3.5%5Cdomains%5Cclimatec" =======> "%2Fhome%2Fc%2Fcw17100%2Fbonolit%2Fpublic_html"
+	SEARCH  7:"//climatec" ======================================> "//climatec.kahn.agency"
+	SEARCH  8:"\/\/climatec" ====================================> "\/\/climatec.kahn.agency"
+	SEARCH  9:"%2F%2Fclimatec" ==================================> "%2F%2Fclimatec.kahn.agency"
+	SEARCH 10:"https://climatec.kahn.agency" ====================> "http://climatec.kahn.agency"
+	SEARCH 11:"https:\/\/climatec.kahn.agency" ==================> "http:\/\/climatec.kahn.agency"
+	SEARCH 12:"https%3A%2F%2Fclimatec.kahn.agency" ==============> "http%3A%2F%2Fclimatec.kahn.agency"
+
+EVALUATE TABLE: "wp_term_relationships"___________________________[ROWS:    19][PG:   1][SCAN:text columns]
+	SEARCH  1:"D:/OSPanel_5.3.5/domains/climatec" ===============> "/home/c/cw17100/bonolit/public_html"
+	SEARCH  2:"D:\/OSPanel_5.3.5\/domains\/climatec" ============> "\/home\/c\/cw17100\/bonolit\/public_html"
+	SEARCH  3:"D%3A%2FOSPanel_5.3.5%2Fdomains%2Fclimatec" =======> "%2Fhome%2Fc%2Fcw17100%2Fbonolit%2Fpublic_html"
+	SEARCH  4:"D:\OSPanel_5.3.5\domains\climatec" ===============> "/home/c/cw17100/bonolit/public_html"
+	SEARCH  5:"D:\\OSPanel_5.3.5\\domains\\climatec" ============> "\/home\/c\/cw17100\/bonolit\/public_html"
+	SEARCH  6:"D%3A%5COSPanel_5.3.5%5Cdomains%5Cclimatec" =======> "%2Fhome%2Fc%2Fcw17100%2Fbonolit%2Fpublic_html"
+	SEARCH  7:"//climatec" ======================================> "//climatec.kahn.agency"
+	SEARCH  8:"\/\/climatec" ====================================> "\/\/climatec.kahn.agency"
+	SEARCH  9:"%2F%2Fclimatec" ==================================> "%2F%2Fclimatec.kahn.agency"
+	SEARCH 10:"https://climatec.kahn.agency" ====================> "http://climatec.kahn.agency"
+	SEARCH 11:"https:\/\/climatec.kahn.agency" ==================> "http:\/\/climatec.kahn.agency"
+	SEARCH 12:"https%3A%2F%2Fclimatec.kahn.agency" ==============> "http%3A%2F%2Fclimatec.kahn.agency"
+
+EVALUATE TABLE: "wp_term_taxonomy"________________________________[ROWS:     3][PG:   1][SCAN:text columns]
+	SEARCH  1:"D:/OSPanel_5.3.5/domains/climatec" ===============> "/home/c/cw17100/bonolit/public_html"
+	SEARCH  2:"D:\/OSPanel_5.3.5\/domains\/climatec" ============> "\/home\/c\/cw17100\/bonolit\/public_html"
+	SEARCH  3:"D%3A%2FOSPanel_5.3.5%2Fdomains%2Fclimatec" =======> "%2Fhome%2Fc%2Fcw17100%2Fbonolit%2Fpublic_html"
+	SEARCH  4:"D:\OSPanel_5.3.5\domains\climatec" ===============> "/home/c/cw17100/bonolit/public_html"
+	SEARCH  5:"D:\\OSPanel_5.3.5\\domains\\climatec" ============> "\/home\/c\/cw17100\/bonolit\/public_html"
+	SEARCH  6:"D%3A%5COSPanel_5.3.5%5Cdomains%5Cclimatec" =======> "%2Fhome%2Fc%2Fcw17100%2Fbonolit%2Fpublic_html"
+	SEARCH  7:"//climatec" ======================================> "//climatec.kahn.agency"
+	SEARCH  8:"\/\/climatec" ====================================> "\/\/climatec.kahn.agency"
+	SEARCH  9:"%2F%2Fclimatec" ==================================> "%2F%2Fclimatec.kahn.agency"
+	SEARCH 10:"https://climatec.kahn.agency" ====================> "http://climatec.kahn.agency"
+	SEARCH 11:"https:\/\/climatec.kahn.agency" ==================> "http:\/\/climatec.kahn.agency"
+	SEARCH 12:"https%3A%2F%2Fclimatec.kahn.agency" ==============> "http%3A%2F%2Fclimatec.kahn.agency"
+
+EVALUATE TABLE: "wp_termmeta"_____________________________________[ROWS:     0][PG:   0][SCAN:no columns  ]
+
+EVALUATE TABLE: "wp_terms"________________________________________[ROWS:     3][PG:   1][SCAN:text columns]
+	SEARCH  1:"D:/OSPanel_5.3.5/domains/climatec" ===============> "/home/c/cw17100/bonolit/public_html"
+	SEARCH  2:"D:\/OSPanel_5.3.5\/domains\/climatec" ============> "\/home\/c\/cw17100\/bonolit\/public_html"
+	SEARCH  3:"D%3A%2FOSPanel_5.3.5%2Fdomains%2Fclimatec" =======> "%2Fhome%2Fc%2Fcw17100%2Fbonolit%2Fpublic_html"
+	SEARCH  4:"D:\OSPanel_5.3.5\domains\climatec" ===============> "/home/c/cw17100/bonolit/public_html"
+	SEARCH  5:"D:\\OSPanel_5.3.5\\domains\\climatec" ============> "\/home\/c\/cw17100\/bonolit\/public_html"
+	SEARCH  6:"D%3A%5COSPanel_5.3.5%5Cdomains%5Cclimatec" =======> "%2Fhome%2Fc%2Fcw17100%2Fbonolit%2Fpublic_html"
+	SEARCH  7:"//climatec" ======================================> "//climatec.kahn.agency"
+	SEARCH  8:"\/\/climatec" ====================================> "\/\/climatec.kahn.agency"
+	SEARCH  9:"%2F%2Fclimatec" ==================================> "%2F%2Fclimatec.kahn.agency"
+	SEARCH 10:"https://climatec.kahn.agency" ====================> "http://climatec.kahn.agency"
+	SEARCH 11:"https:\/\/climatec.kahn.agency" ==================> "http:\/\/climatec.kahn.agency"
+	SEARCH 12:"https%3A%2F%2Fclimatec.kahn.agency" ==============> "http%3A%2F%2Fclimatec.kahn.agency"
+
+EVALUATE TABLE: "wp_usermeta"_____________________________________[ROWS:    25][PG:   1][SCAN:text columns]
+	SEARCH  1:"D:/OSPanel_5.3.5/domains/climatec" ===============> "/home/c/cw17100/bonolit/public_html"
+	SEARCH  2:"D:\/OSPanel_5.3.5\/domains\/climatec" ============> "\/home\/c\/cw17100\/bonolit\/public_html"
+	SEARCH  3:"D%3A%2FOSPanel_5.3.5%2Fdomains%2Fclimatec" =======> "%2Fhome%2Fc%2Fcw17100%2Fbonolit%2Fpublic_html"
+	SEARCH  4:"D:\OSPanel_5.3.5\domains\climatec" ===============> "/home/c/cw17100/bonolit/public_html"
+	SEARCH  5:"D:\\OSPanel_5.3.5\\domains\\climatec" ============> "\/home\/c\/cw17100\/bonolit\/public_html"
+	SEARCH  6:"D%3A%5COSPanel_5.3.5%5Cdomains%5Cclimatec" =======> "%2Fhome%2Fc%2Fcw17100%2Fbonolit%2Fpublic_html"
+	SEARCH  7:"//climatec" ======================================> "//climatec.kahn.agency"
+	SEARCH  8:"\/\/climatec" ====================================> "\/\/climatec.kahn.agency"
+	SEARCH  9:"%2F%2Fclimatec" ==================================> "%2F%2Fclimatec.kahn.agency"
+	SEARCH 10:"https://climatec.kahn.agency" ====================> "http://climatec.kahn.agency"
+	SEARCH 11:"https:\/\/climatec.kahn.agency" ==================> "http:\/\/climatec.kahn.agency"
+	SEARCH 12:"https%3A%2F%2Fclimatec.kahn.agency" ==============> "http%3A%2F%2Fclimatec.kahn.agency"
+
+EVALUATE TABLE: "wp_users"________________________________________[ROWS:     1][PG:   1][SCAN:text columns]
+	SEARCH  1:"D:/OSPanel_5.3.5/domains/climatec" ===============> "/home/c/cw17100/bonolit/public_html"
+	SEARCH  2:"D:\/OSPanel_5.3.5\/domains\/climatec" ============> "\/home\/c\/cw17100\/bonolit\/public_html"
+	SEARCH  3:"D%3A%2FOSPanel_5.3.5%2Fdomains%2Fclimatec" =======> "%2Fhome%2Fc%2Fcw17100%2Fbonolit%2Fpublic_html"
+	SEARCH  4:"D:\OSPanel_5.3.5\domains\climatec" ===============> "/home/c/cw17100/bonolit/public_html"
+	SEARCH  5:"D:\\OSPanel_5.3.5\\domains\\climatec" ============> "\/home\/c\/cw17100\/bonolit\/public_html"
+	SEARCH  6:"D%3A%5COSPanel_5.3.5%5Cdomains%5Cclimatec" =======> "%2Fhome%2Fc%2Fcw17100%2Fbonolit%2Fpublic_html"
+	SEARCH  7:"//climatec" ======================================> "//climatec.kahn.agency"
+	SEARCH  8:"\/\/climatec" ====================================> "\/\/climatec.kahn.agency"
+	SEARCH  9:"%2F%2Fclimatec" ==================================> "%2F%2Fclimatec.kahn.agency"
+	SEARCH 10:"https://climatec.kahn.agency" ====================> "http://climatec.kahn.agency"
+	SEARCH 11:"https:\/\/climatec.kahn.agency" ==================> "http:\/\/climatec.kahn.agency"
+	SEARCH 12:"https%3A%2F%2Fclimatec.kahn.agency" ==============> "http%3A%2F%2Fclimatec.kahn.agency"
+--------------------------------------
+SCANNED:	Tables:13 	|	 Rows:4606 	|	 Cells:22209 
+UPDATED:	Tables:3 	|	 Rows:34 	|	 Cells:39 
+ERRORS:		0 
+RUNTIME:	0.092100 sec
+
+====================================
+REMOVE LICENSE KEY
+====================================
+
+====================================
+CREATE NEW ADMIN USER
+====================================
+
+====================================
+CONFIGURATION FILE UPDATES
+====================================
+	UPDATE DB_NAME ""cw17100_climatec""
+	UPDATE DB_USER ""cw17100_climatec""
+	UPDATE DB_PASSWORD "** OBSCURED **"
+	UPDATE DB_HOST ""localhost""
+	REMOVE WPCACHEHOME
+	
+*** UPDATED WP CONFIG FILE ***
+
+====================================
+HTACCESS UPDATE MODE: "NEW"
+====================================
+- PASS: Successfully created a new .htaccess file.
+- PASS: Existing Apache '.htaccess__[HASH]' was removed
+
+====================================
+GENERAL UPDATES & CLEANUP
+====================================
+
+====================================
+DEACTIVATE PLUGINS CHECK
+====================================
+Deactivated plugins list here: Array
+(
+    [0] => really-simple-ssl/rlrsssl-really-simple-ssl.php
+    [1] => simple-google-recaptcha/simple-google-recaptcha.php
+    [2] => js_composer/js_composer.php
+)
+
+
+====================================
+NOTICES TEST
+====================================
+No General Notices Found
+
+
+====================================
+CLEANUP TMP FILES
+====================================
+
+====================================
+FINAL REPORT NOTICES
+====================================
+
+STEP-3 COMPLETE @ 06:56:55 - RUNTIME: 0.1338 sec. 
+
+
+====================================
+FINAL REPORT NOTICES LIST
+====================================
+-----------------------
+[INFO] No general notices
+	SECTIONS: general
+
+-----------------------
+[INFO] No errors in database
+	SECTIONS: database
+
+-----------------------
+[INFO] No search and replace data errors
+	SECTIONS: search_replace
+
+-----------------------
+[INFO] No files extraction errors
+	SECTIONS: files
+
+====================================
