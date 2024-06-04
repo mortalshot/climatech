@@ -1,0 +1,36 @@
+<svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.26308 28.6771L1.49216 24.9062C1.362 24.7761 1.34502 24.5709 1.45201 24.4211L7.34129 16.1761C7.47653 15.9868 7.74942 15.9642 7.91395 16.1287L14.0406 22.2554C14.2051 22.4199 14.1825 22.6928 13.9932 22.828L5.7482 28.7173C5.59841 28.8243 5.39324 28.8073 5.26308 28.6771Z" fill="#439DE3"/>
+<mask id="mask0_5704_11383" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="9" y="0" width="22" height="22">
+<circle cx="20.5137" cy="0.71731" r="0.507215" transform="rotate(45 20.5137 0.71731)" fill="#439DE3"/>
+<circle cx="22.3069" cy="2.51064" r="0.507215" transform="rotate(45 22.3069 2.51064)" fill="#439DE3"/>
+<circle cx="24.1002" cy="4.30386" r="0.507215" transform="rotate(45 24.1002 4.30386)" fill="#439DE3"/>
+<circle cx="25.8935" cy="6.09719" r="0.507215" transform="rotate(45 25.8935 6.09719)" fill="#439DE3"/>
+<circle cx="27.6868" cy="7.89041" r="0.507215" transform="rotate(45 27.6868 7.89041)" fill="#439DE3"/>
+<circle cx="29.48" cy="9.68374" r="0.507215" transform="rotate(45 29.48 9.68374)" fill="#439DE3"/>
+<circle cx="19.2584" cy="3.76589" r="0.507215" transform="rotate(45 19.2584 3.76589)" fill="#439DE3"/>
+<circle cx="21.0516" cy="5.55923" r="0.507215" transform="rotate(45 21.0516 5.55923)" fill="#439DE3"/>
+<circle cx="22.8449" cy="7.35244" r="0.507215" transform="rotate(45 22.8449 7.35244)" fill="#439DE3"/>
+<circle cx="24.6382" cy="9.14578" r="0.507215" transform="rotate(45 24.6382 9.14578)" fill="#439DE3"/>
+<circle cx="26.4315" cy="10.939" r="0.507215" transform="rotate(45 26.4315 10.939)" fill="#439DE3"/>
+<circle cx="18.0031" cy="6.81448" r="0.507215" transform="rotate(45 18.0031 6.81448)" fill="#439DE3"/>
+<circle cx="19.7964" cy="8.60781" r="0.507215" transform="rotate(45 19.7964 8.60781)" fill="#439DE3"/>
+<circle cx="21.5897" cy="10.401" r="0.507215" transform="rotate(45 21.5897 10.401)" fill="#439DE3"/>
+<circle cx="23.3829" cy="12.1944" r="0.507215" transform="rotate(45 23.3829 12.1944)" fill="#439DE3"/>
+<circle cx="16.7478" cy="9.86306" r="0.507215" transform="rotate(45 16.7478 9.86306)" fill="#439DE3"/>
+<circle cx="18.5411" cy="11.6564" r="0.507215" transform="rotate(45 18.5411 11.6564)" fill="#439DE3"/>
+<circle cx="20.3344" cy="13.4496" r="0.507215" transform="rotate(45 20.3344 13.4496)" fill="#439DE3"/>
+<circle cx="15.4925" cy="12.9115" r="0.507215" transform="rotate(45 15.4925 12.9115)" fill="#439DE3"/>
+<circle cx="17.2858" cy="14.7049" r="0.507215" transform="rotate(45 17.2858 14.7049)" fill="#439DE3"/>
+<circle cx="14.2372" cy="15.9601" r="0.507215" transform="rotate(45 14.2372 15.9601)" fill="#439DE3"/>
+</mask>
+<g mask="url(#mask0_5704_11383)">
+<rect x="20.6084" y="-0.625" width="42.606" height="59.3441" transform="rotate(45 20.6084 -0.625)" fill="#C4C4C4"/>
+<rect x="20.6084" y="-0.625" width="42.606" height="59.3441" transform="rotate(45 20.6084 -0.625)" fill="url(#paint0_linear_5704_11383)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_5704_11383" x1="41.8726" y1="1.68739" x2="41.8726" y2="58.7195" gradientUnits="userSpaceOnUse">
+<stop stop-color="#2EAEFF"/>
+<stop offset="1" stop-color="#B4E2FF"/>
+</linearGradient>
+</defs>
+</svg>
