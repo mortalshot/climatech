@@ -1,15 +1,45 @@
+//.page-socials    ====================================================================================================
+.page-socials {
+  display: none;
+
+  @media (min-width: em(1280)) {
+    display: block;
+    position: fixed;
+    z-index: 2;
+    top: rem(112);
+    @include adaptiveValue("right", 80, 20, 1640, 1280, 1);
+
+    .socials {
+      // .socials__items
+      &__items {
+        flex-direction: column;
+        gap: rem(12);
+      }
+
+      // .socials__item
+      &__item {
+        transition: $transition ease all 0s;
+
+        &._active {
+          color: $White;
+        }
+      }
+    }
+  }
+}
+
 //.template1    ====================================================================================================
 .template1 {
   position: relative;
   display: grid;
   color: $White;
-  @include adaptiveValue("min-height", 875, 715, 1140, 992, 1);
 
   @media (min-width: $mobile) {
     align-content: flex-end;
-  }
+    @include adaptiveValue("min-height", 875, 715, 1140, 992, 1);
+    }
   @media (max-width: $mobileM) {
-    min-height: 100vh;
+    min-height: 100svh;
   }
 
   &:first-child {
@@ -1049,6 +1079,11 @@
     background-color: $BGColor;
     display: inline-block;
     animation: 25s slide infinite linear;
+    animation-play-state: paused;
+
+    ._active & {
+      animation-play-state: running;
+    }
   }
 
   // .template10-ticker__item
@@ -1202,8 +1237,8 @@
 
   // .template13__bg
   &__bg {
-    @media (max-width:$mobile){
-       display: none; 
+    @media (max-width: $mobile) {
+      display: none;
     }
   }
 
@@ -1291,6 +1326,113 @@
   }
   // .contacts__link
   &__link {
+  }
+}
+
+//.template14    ====================================================================================================
+.template14 {
+  position: relative;
+
+  // .template14__bg
+  &__bg {
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+
+  // .template14__container
+  &__container {
+  }
+
+  // .template14__title
+  &__title {
+    @include adaptiveValue("font-size", 56, 36);
+    line-height: 110%;
+    display: flex;
+    flex-direction: column;
+    max-width: percent(524, 1140);
+
+    & > :last-child {
+      text-align: right;
+    }
+
+    strong {
+      font-weight: 600;
+    }
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 100, 32);
+    }
+  }
+
+  // .template14__row
+  &__row {
+    display: grid;
+    row-gap: rem(32);
+
+    @media (min-width: $tablet) {
+      grid-template-columns: percent(700, 1140) percent(600, 1140);
+      @include adaptiveValue("column-gap", 65, 20, 1640, 1140, 1);
+    }
+  }
+
+  // .template14__items
+  &__items {
+    display: grid;
+    @include adaptiveValue("column-gap", 80, 20, 1640, 1140, 1);
+    @include adaptiveValue("row-gap", 84, 32);
+
+    @media (min-width: $mobileM) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  // .template14__item
+  &__item {
+  }
+
+  // .template14__right
+  &__right {
+    @media (max-width: $tablet) {
+      grid-row: 1/2;
+    }
+  }
+
+  // .template14__image
+  &__image {
+    @media (min-width: $tablet) {
+      position: sticky;
+      top: rem(20);
+    }
+  }
+}
+
+.template14-item {
+  display: grid;
+  align-content: flex-start;
+  @include adaptiveValue("row-gap", 16, 8);
+
+  // .template14-item__name
+  &__name {
+    font-weight: 500;
+    @include adaptiveValue("font-size", 20, 18);
+    line-height: 120%;
+  }
+
+  // .template14-item__address
+  &__address {
+  }
+
+  // .template14-item__contacts
+  &__contacts {
+    display: grid;
+    align-content: flex-start;
+    row-gap: rem(4);
+  }
+
+  // .template14-item__contact
+  &__contact {
+    font-weight: 500;
   }
 }
 

@@ -3955,6 +3955,56 @@
     }
     modules_flsModules.watcher = new ScrollWatcher({});
     let addWindowScrollEvent = false;
+    function stickyBlock() {
+        addWindowScrollEvent = true;
+        function stickyBlockInit() {
+            const stickyParents = document.querySelectorAll("[data-sticky]");
+            if (stickyParents.length) stickyParents.forEach((stickyParent => {
+                let stickyConfig = {
+                    media: stickyParent.dataset.sticky ? parseInt(stickyParent.dataset.sticky) : null,
+                    top: stickyParent.dataset.stickyTop ? parseInt(stickyParent.dataset.stickyTop) : 0,
+                    bottom: stickyParent.dataset.stickyBottom ? parseInt(stickyParent.dataset.stickyBottom) : 0,
+                    header: stickyParent.hasAttribute("data-sticky-header") ? document.querySelector("header.header").offsetHeight : 0
+                };
+                stickyBlockItem(stickyParent, stickyConfig);
+            }));
+        }
+        function stickyBlockItem(stickyParent, stickyConfig) {
+            const stickyBlockItem = stickyParent.querySelector("[data-sticky-item]");
+            const headerHeight = stickyConfig.header;
+            const offsetTop = headerHeight + stickyConfig.top;
+            const startPoint = stickyBlockItem.getBoundingClientRect().top + scrollY - offsetTop;
+            document.addEventListener("windowScroll", stickyBlockActions);
+            function stickyBlockActions(e) {
+                const endPoint = stickyParent.offsetHeight + stickyParent.getBoundingClientRect().top + scrollY - (offsetTop + stickyBlockItem.offsetHeight + stickyConfig.bottom);
+                let stickyItemValues = {
+                    position: "relative",
+                    bottom: "auto",
+                    top: "0px",
+                    left: "0px",
+                    width: "auto"
+                };
+                if (!stickyConfig.media || stickyConfig.media < window.innerWidth) if (offsetTop + stickyConfig.bottom + stickyBlockItem.offsetHeight < window.innerHeight) if (scrollY >= startPoint && scrollY <= endPoint) {
+                    stickyItemValues.position = `fixed`;
+                    stickyItemValues.bottom = `auto`;
+                    stickyItemValues.top = `${offsetTop}px`;
+                    stickyItemValues.left = `${stickyBlockItem.getBoundingClientRect().left}px`;
+                    stickyItemValues.width = `${stickyBlockItem.offsetWidth}px`;
+                } else if (scrollY >= endPoint) {
+                    stickyItemValues.position = `absolute`;
+                    stickyItemValues.bottom = `${stickyConfig.bottom}px`;
+                    stickyItemValues.top = `auto`;
+                    stickyItemValues.left = `0px`;
+                    stickyItemValues.width = `${stickyBlockItem.offsetWidth}px`;
+                }
+                stickyBlockType(stickyBlockItem, stickyItemValues);
+            }
+        }
+        function stickyBlockType(stickyBlockItem, stickyItemValues) {
+            stickyBlockItem.style.cssText = `position:${stickyItemValues.position};bottom:${stickyItemValues.bottom};top:${stickyItemValues.top};left:${stickyItemValues.left};width:${stickyItemValues.width};`;
+        }
+        stickyBlockInit();
+    }
     setTimeout((() => {
         if (addWindowScrollEvent) {
             let windowScroll = new Event("windowScroll");
@@ -4059,34 +4109,14 @@
     };
     const da = new DynamicAdapt("max");
     da.init();
-    const dots = document.querySelectorAll(".progress-item__dots");
-    if (dots.length > 0) dots.forEach((element => {
-        let dots = element.getAttribute("data-dots");
-        let marked = element.getAttribute("data-percent");
-        let percent = Math.floor(dots * marked / 100);
-        let points = "";
-        for (let i = 0; i < dots; i++) points += `<span class="progress-item__dot" style="--i: ${i};"></span>`;
-        element.innerHTML = points;
-        const pointsMarked = element.querySelectorAll(".progress-item__dot");
-        for (let i = 0; i < percent; i++) pointsMarked[i].classList.add("_active");
-    }));
-    const dotsValue = document.querySelectorAll(".progress-item__value span");
-    if (dotsValue.length > 0) dotsValue.forEach((element => {
-        let from = 0;
-        let to = element.getAttribute("data-target");
-        let step = 1;
-        let counter = setInterval((function() {
-            from += step;
-            element.textContent = from;
-            if (from == to) clearInterval(counter);
-        }), 50);
-    }));
-    const template10Ticker = document.querySelectorAll(".template10-ticker");
-    if (template10Ticker.length > 0) template10Ticker.forEach((element => {
-        const elementRow = element.querySelector(".template10-ticker__row");
-        let rowClone = elementRow.cloneNode(true);
-        element.appendChild(rowClone);
-    }));
+    const header = document.querySelector(".header");
+    function checkScroll() {
+        var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+        var screenHeight = window.innerHeight;
+        if (scrollPosition > screenHeight) header.classList.add("_scrolled"); else header.classList.remove("_scrolled");
+        if (scrollPosition > 1.25 * screenHeight) header.classList.add("_show"); else header.classList.remove("_show");
+    }
+    window.addEventListener("scroll", checkScroll);
     let input = document.querySelectorAll(".form__input");
     if (input.length > 0) {
         input.forEach((item => {
@@ -4152,8 +4182,89 @@
             element.innerHTML = "Нет";
         }));
     }));
+    const template10Ticker = document.querySelectorAll(".template10-ticker");
+    if (template10Ticker.length > 0) template10Ticker.forEach((element => {
+        const elementRow = element.querySelector(".template10-ticker__row");
+        let rowClone = elementRow.cloneNode(true);
+        element.appendChild(rowClone);
+    }));
+    document.addEventListener("DOMContentLoaded", (function() {
+        if (window.innerWidth > 1279.97) {
+            const fixedElements = document.querySelectorAll(".page-socials .socials__item");
+            const sectionsBg = document.querySelectorAll(".section-bg");
+            function checkIntersections() {
+                fixedElements.forEach((fixedEl => {
+                    let isActive = false;
+                    sectionsBg.forEach((section => {
+                        const sectionRect = section.getBoundingClientRect();
+                        const fixedElRect = fixedEl.getBoundingClientRect();
+                        if (fixedElRect.top < sectionRect.bottom && fixedElRect.bottom > sectionRect.top) isActive = true;
+                    }));
+                    if (isActive) fixedEl.classList.add("_active"); else fixedEl.classList.remove("_active");
+                }));
+            }
+            window.addEventListener("scroll", checkIntersections);
+            checkIntersections();
+        }
+        const targetTemplate2 = document.querySelector(".template2");
+        if (targetTemplate2) {
+            const observerOptions = {
+                root: null,
+                rootMargin: "0px",
+                threshold: .1
+            };
+            const observerProgress = new IntersectionObserver(((entries, observerProgress) => {
+                entries.forEach((entry => {
+                    if (entry.isIntersecting) {
+                        activateDots();
+                        activateCounters();
+                        observerProgress.unobserve(entry.target);
+                    }
+                }));
+            }), observerOptions);
+            observerProgress.observe(targetTemplate2);
+        }
+        const targetTemplate10 = document.querySelector(".template10");
+        if (targetTemplate10) {
+            const observer = new IntersectionObserver((entries => {
+                entries.forEach((entry => {
+                    if (entry.isIntersecting) entry.target.classList.add("_active"); else entry.target.classList.remove("_active");
+                }));
+            }), {
+                threshold: .5
+            });
+            observer.observe(targetTemplate10);
+        }
+    }));
+    function activateDots() {
+        const dots = document.querySelectorAll(".progress-item__dots");
+        dots.forEach((element => {
+            let dots = element.getAttribute("data-dots");
+            let marked = element.getAttribute("data-percent");
+            let percent = Math.floor(dots * marked / 100);
+            let points = "";
+            for (let i = 0; i < dots; i++) points += `<span class="progress-item__dot" style="--i: ${i};"></span>`;
+            element.innerHTML = points;
+            const pointsMarked = element.querySelectorAll(".progress-item__dot");
+            for (let i = 0; i < percent; i++) pointsMarked[i].classList.add("_active");
+        }));
+    }
+    function activateCounters() {
+        const dotsValue = document.querySelectorAll(".progress-item__value span");
+        dotsValue.forEach((element => {
+            let from = 0;
+            let to = element.getAttribute("data-target");
+            let step = 1;
+            let counter = setInterval((function() {
+                from += step;
+                element.textContent = from;
+                if (from == to) clearInterval(counter);
+            }), 50);
+        }));
+    }
     window["FLS"] = true;
     isWebp();
     menuInit();
     formQuantity();
+    stickyBlock();
 })();

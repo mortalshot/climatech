@@ -38,6 +38,7 @@
 .header {
 	position: relative;
 	z-index: 10;
+	transition: $transition ease all 0s;
 
 	// .header__container
 	&__container {
@@ -82,8 +83,8 @@
 				display: grid;
 				align-content: flex-start;
 				position: fixed;
-				height: 100vh;
-				top: 0;
+				height: 100svh;
+				top: -100%;
 				left: 0;
 				right: 0;
 				padding: rem(88) rem(32) rem(32);
@@ -94,17 +95,35 @@
 				pointer-events: none;
 				overflow-y: auto;
 				overflow-x: hidden;
-				transform: translateX(-100%);
-				transition:
-					0.5s ease transform,
-					0.5s opacity,
-					0.5s visibility 0s;
+				transition: $transition ease all 0s;
+
+					&::before {
+						content: '';
+						width: 100%;
+						height: rem(88);
+						background-color: $White;
+						position: fixed;
+						top: -100%;
+						left: 0;
+						right: 0;
+						pointer-events: none;
+						visibility: hidden;
+						opacity: 0;
+						z-index: 11;
+						transition: $transition ease all 0s;
+					}
 
 				.menu-open & {
-					transform: translateX(0%);
+					top: 0;
 					opacity: 1 !important;
 					visibility: visible;
 					pointer-events: all;
+
+					&::before {
+						opacity: 1 !important;
+						visibility: visible;
+						top: 0;
+					}
 				}
 
 				ul {
@@ -163,6 +182,28 @@
 
 	.home & {
 		color: $White;
+	}
+
+	&._scrolled {
+		position: sticky;
+		top: 0;
+		background-color: $White;
+		color: $mainColor;
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+
+	&._show {
+		opacity: 1;
+		transform: translateY(0);
+
+		.icon-menu {
+			span,
+			&::before,
+			&::after {
+				background-color: $mainColor;
+			}
+		}
 	}
 }
 
