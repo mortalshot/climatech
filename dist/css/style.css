@@ -2397,9 +2397,9 @@ video {
   	@supports not (padding: $propertyValue) {
   		padding: calc(2rem + 1.75 * (100vw - 62rem) / 9.25);
   	} */
-  background-color: #d7f8f7;
-  -webkit-backdrop-filter: blur(30px);
-          backdrop-filter: blur(30px);
+  background-color: rgba(215, 248, 247, 0.1);
+  -webkit-backdrop-filter: blur(0.625rem);
+          backdrop-filter: blur(0.625rem);
   border-radius: clamp( 1.5rem , 1.3869119421rem  +  0.482509047vw , 1.75rem );
   /* 	// Если поддерживается clamp();
   	@supports (border-radius: $propertyValue) {
@@ -2410,6 +2410,16 @@ video {
   		border-radius: calc(1.5rem + 0.25 * (100vw - 23.4375rem) / 51.8125);
   	} */
   overflow: hidden;
+}
+
+.template5 {
+  position: relative;
+}
+
+.template5__bg img {
+  -webkit-transform: translate(-50%, -10%);
+      -ms-transform: translate(-50%, -10%);
+          transform: translate(-50%, -10%);
 }
 
 .template5__image {
@@ -2451,9 +2461,9 @@ video {
   	@supports not (padding: $propertyValue) {
   		padding: calc(2rem + 0.5 * (100vw - 23.4375rem) / 51.8125);
   	} */
-  background-color: #d7f8f7;
-  -webkit-backdrop-filter: blur(30px);
-          backdrop-filter: blur(30px);
+  background-color: rgba(215, 248, 247, 0.1);
+  -webkit-backdrop-filter: blur(0.625rem);
+          backdrop-filter: blur(0.625rem);
   border-radius: clamp( 1.5rem , 1.3869119421rem  +  0.482509047vw , 1.75rem );
   /* 	// Если поддерживается clamp();
   	@supports (border-radius: $propertyValue) {
@@ -2905,6 +2915,10 @@ video {
   top: 0;
 }
 
+.template10 {
+  background-color: #F8F8F8;
+}
+
 .template10-ticker {
   overflow: hidden;
   white-space: nowrap;
@@ -3015,8 +3029,8 @@ video {
 
 .template11__wrapper {
   background-color: rgba(215, 248, 228, 0.6);
-  -webkit-backdrop-filter: blur(54px);
-          backdrop-filter: blur(54px);
+  -webkit-backdrop-filter: blur(0.625rem);
+          backdrop-filter: blur(0.625rem);
   padding-top: clamp( 2rem , 1.4911037394rem  +  2.1712907117vw , 3.125rem );
   /* 	// Если поддерживается clamp();
   	@supports (padding-top: $propertyValue) {
@@ -3116,6 +3130,7 @@ video {
 }
 
 .template12__row .template4__body {
+  background-color: rgba(215, 248, 247, 0.9);
   -webkit-box-flex: 0;
       -ms-flex: 0 0 62.6315789474%;
           flex: 0 0 62.6315789474%;
@@ -3135,9 +3150,9 @@ video {
   	@supports not (padding: $propertyValue) {
   		padding: calc(2rem + 1.75 * (100vw - 23.4375rem) / 51.8125);
   	} */
-  background-color: #d7f8f7;
-  -webkit-backdrop-filter: blur(30px);
-          backdrop-filter: blur(30px);
+  background-color: rgba(215, 248, 247, 0.5);
+  -webkit-backdrop-filter: blur(0.3125rem);
+          backdrop-filter: blur(0.3125rem);
   border-radius: clamp( 0.75rem , 0.2976477684rem  +  1.9300361882vw , 1.75rem );
   /* 	// Если поддерживается clamp();
   	@supports (border-radius: $propertyValue) {
@@ -3320,6 +3335,99 @@ video {
 
 .template14-item__contact {
   font-weight: 500;
+}
+
+.template15 {
+  position: relative;
+}
+
+.template15__title {
+  text-align: left;
+}
+
+.template15__items {
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  row-gap: clamp( 3.375rem , 0.3781664656rem  +  12.7864897467vw , 10rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (row-gap: $propertyValue) {
+  		row-gap: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (row-gap: $propertyValue) {
+  		row-gap: calc(3.375rem + 6.625 * (100vw - 23.4375rem) / 51.8125);
+  	} */
+}
+
+.template15__item .template4__left {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 31.9298245614%;
+          flex: 0 0 31.9298245614%;
+}
+
+.template15__item .template4__image {
+  padding: 0;
+  background-color: transparent;
+  border-radius: 0.625rem;
+  -webkit-box-shadow: 2px 6px 10px 0 rgba(0, 0, 0, 0.08);
+          box-shadow: 2px 6px 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.template15__item .template4__body {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 73.3333333333%;
+          flex: 0 0 73.3333333333%;
+  z-index: 2;
+  background-color: rgba(215, 248, 228, 0.7);
+  min-height: initial;
+  border-radius: 0.75rem;
+}
+
+.template15__item .template4__text ul {
+  padding-left: 1.5rem;
+  gap: 0;
+}
+
+.template15__item .template4__text ul li {
+  padding: 0;
+  list-style-type: disc;
+}
+
+.template15__item .template4__text ul li::before {
+  display: none;
+}
+
+.template16__text h1,
+.template16__text h2,
+.template16__text h3,
+.template16__text h4,
+.template16__text h5,
+.template16__text h6 {
+  margin-bottom: clamp( 1.5rem , 1.1607358263rem  +  1.4475271411vw , 2.25rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (margin-bottom: $propertyValue) {
+  		margin-bottom: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (margin-bottom: $propertyValue) {
+  		margin-bottom: calc(1.5rem + 0.75 * (100vw - 23.4375rem) / 51.8125);
+  	} */
+}
+
+.template16__text ul {
+  padding-left: 1.5rem;
+  gap: 0;
+}
+
+.template16__text ul li {
+  padding: 0;
+  list-style-type: disc;
+}
+
+.template16__text ul li::before {
+  display: none;
 }
 
 .swiper {
@@ -3930,6 +4038,52 @@ video {
     -ms-grid-columns: 52% 1fr;
     grid-template-columns: 52% 1fr;
   }
+
+  .template15__item:nth-child(2n) {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+
+  .template15__item:nth-child(2n) .template4__body {
+    -webkit-transform: translateX(7.1770334928%);
+        -ms-transform: translateX(7.1770334928%);
+            transform: translateX(7.1770334928%);
+  }
+
+  .template15__item .template4__left {
+    padding: 0;
+  }
+
+  .template15__item .template4__body {
+    -webkit-transform: translateX(-7.1770334928%);
+        -ms-transform: translateX(-7.1770334928%);
+            transform: translateX(-7.1770334928%);
+  }
+}
+
+@media (min-width: 47.99875em) and (min-width: 61.99875em) {
+  .template15__item:nth-child(2n) .template4__body {
+    padding-left: clamp( 2rem , -9.7297297297rem  +  18.9189189189vw , 3.75rem );
+    /* 	// Если поддерживается clamp();
+    	@supports (padding-left: $propertyValue) {
+    		padding-left: $propertyValue;
+    	}
+    	// Если не поддерживается clamp();
+    	@supports not (padding-left: $propertyValue) {
+    		padding-left: calc(2rem + 1.75 * (100vw - 62rem) / 9.25);
+    	} */
+    padding-right: clamp( 4.5rem , -15.6081081081rem  +  32.4324324324vw , 7.5rem );
+    /* 	// Если поддерживается clamp();
+    	@supports (padding-right: $propertyValue) {
+    		padding-right: $propertyValue;
+    	}
+    	// Если не поддерживается clamp();
+    	@supports not (padding-right: $propertyValue) {
+    		padding-right: calc(4.5rem + 3 * (100vw - 62rem) / 9.25);
+    	} */
+  }
 }
 
 @media (min-width: 52.5em) {
@@ -4494,8 +4648,16 @@ video {
             justify-content: center;
   }
 
+  .template5__bg {
+    display: none;
+  }
+
   .template5__image {
     padding-bottom: 19.75rem;
+  }
+
+  .template5__body {
+    background-color: #d7f8f7;
   }
 
   .template8__left {
@@ -4511,8 +4673,16 @@ video {
     display: none;
   }
 
+  .template12__row .template4__body {
+    background-color: #d7f8f7;
+  }
+
   .template13__bg {
     display: none;
+  }
+
+  .template13__wrapper {
+    background-color: #d7f8f7;
   }
 
   .template13__form:not(:last-child) {

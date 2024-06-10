@@ -37,7 +37,7 @@
   @media (min-width: $mobile) {
     align-content: flex-end;
     @include adaptiveValue("min-height", 875, 715, 1140, 992, 1);
-    }
+  }
   @media (max-width: $mobileM) {
     min-height: 100svh;
   }
@@ -455,8 +455,8 @@
     align-content: flex-start;
     @include adaptiveValue("row-gap", 40, 32);
     @include adaptiveValue("padding", 60, 32, 1140, 992, 1);
-    background-color: $MattGlass;
-    backdrop-filter: blur(30px);
+    background-color: rgba($color: $MattGlass, $alpha: 0.1);
+    backdrop-filter: blur(rem(10));
     @include adaptiveValue("border-radius", 28, 24);
     overflow: hidden;
 
@@ -487,6 +487,19 @@
 
 //.template5    ====================================================================================================
 .template5 {
+  position: relative;
+
+  // .template5__bg
+  &__bg {
+    img {
+      transform: translate(-50%, -10%);
+    }
+
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+
   // .template5__container
   &__container {
   }
@@ -526,9 +539,13 @@
   // .template5__body
   &__body {
     @include adaptiveValue("padding", 40, 32);
-    background-color: $MattGlass;
-    backdrop-filter: blur(30px);
+    background-color: rgba($color: $MattGlass, $alpha: 0.1);
+    backdrop-filter: blur(rem(10));
     @include adaptiveValue("border-radius", 28, 24);
+
+    @media (max-width: $mobile) {
+      background-color: $MattGlass;
+    }
   }
 
   // .template5__row
@@ -1026,6 +1043,8 @@
 
 //.template10    ====================================================================================================
 .template10 {
+  background-color: $BGColor;
+
   // .template10__container
   &__container {
   }
@@ -1137,7 +1156,7 @@
   // .template11__wrapper
   &__wrapper {
     background-color: rgba($color: #d7f8e4, $alpha: 0.6);
-    backdrop-filter: blur(54px);
+    backdrop-filter: blur(rem(10));
     @include adaptiveValue("padding-top", 50, 32);
     @include adaptiveValue("padding-bottom", 50, 32);
     @include adaptiveValue("padding-left", 60, 32);
@@ -1217,7 +1236,12 @@
 
       // .template4__body
       &__body {
+        background-color: rgba($color: $MattGlass, $alpha: 0.9);
         flex: 0 0 percent(714, 1140);
+
+        @media (max-width: $mobile) {
+          background-color: $MattGlass;
+        }
       }
 
       // .template4__caption
@@ -1249,8 +1273,8 @@
   // .template13__wrapper
   &__wrapper {
     @include adaptiveValue("padding", 60, 32);
-    background-color: $MattGlass;
-    backdrop-filter: blur(30px);
+    background-color: rgba($color: $MattGlass, $alpha: 0.5);
+    backdrop-filter: blur(rem(5));
     @include adaptiveValue("border-radius", 28, 12);
     display: grid;
     justify-content: space-between;
@@ -1262,6 +1286,9 @@
     }
     @media (min-width: $tablet) {
       grid-template-columns: percent(461, 1020) percent(364, 1020);
+    }
+    @media (max-width: $mobile) {
+      background-color: $MattGlass;
     }
   }
 
@@ -1433,6 +1460,139 @@
   // .template14-item__contact
   &__contact {
     font-weight: 500;
+  }
+}
+
+//.template15    ====================================================================================================
+.template15 {
+  position: relative;
+
+  // .template15__bg
+  &__bg {
+  }
+
+  // .template15__container
+  &__container {
+  }
+
+  // .template15__title
+  &__title {
+    text-align: left;
+  }
+
+  // .template15__items
+  &__items {
+    display: grid;
+    align-content: flex-start;
+    @include adaptiveValue("row-gap", 160, 54);
+  }
+
+  // .template15__item
+  &__item {
+    &:nth-child(2n) {
+      @media (min-width: $mobile) {
+        flex-direction: row-reverse;
+
+        .template4__body {
+          transform: translateX(percent(60, 836));
+
+          @media (min-width: $tablet) {
+            @include adaptiveValue("padding-left", 60, 32, 1140, 992, 1);
+            @include adaptiveValue("padding-right", 120, 72, 1140, 992, 1);
+          }
+        }
+      }
+    }
+
+    .template4 {
+      // .template4__slide
+      &__slide {
+      }
+
+      // .template4__left
+      &__left {
+        flex: 0 0 percent(364, 1140);
+
+        @media (min-width: $mobile) {
+          padding: 0;
+        }
+      }
+
+      // .template4__image
+      &__image {
+        padding: 0;
+        background-color: transparent;
+        border-radius: rem(10);
+        box-shadow: 2px 6px 10px 0 rgba(0, 0, 0, 0.08);
+      }
+
+      // .template4__body
+      &__body {
+        flex: 0 0 percent(836, 1140);
+        z-index: 2;
+        background-color: rgba(#d7f8e4, 0.7);
+        min-height: initial;
+        border-radius: rem(12);
+
+        @media (min-width: $mobile) {
+          transform: translateX(percent(-60, 836));
+        }
+      }
+
+      // .template4__caption
+      &__caption {
+      }
+
+      // .template4__text
+      &__text {
+        ul {
+          padding-left: rem(24);
+          gap: 0;
+
+          li {
+            padding: 0;
+            list-style-type: disc;
+
+            &::before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//.template15    ====================================================================================================
+.template16 {
+  // .template16__container
+  &__container {
+  }
+
+  // .template16__text
+  &__text {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @include adaptiveValue("margin-bottom", 36, 24);
+    }
+
+    ul {
+      padding-left: rem(24);
+      gap: 0;
+
+      li {
+        padding: 0;
+        list-style-type: disc;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
   }
 }
 
