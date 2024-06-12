@@ -12,6 +12,12 @@ function checkScroll() {
   var screenHeight = window.innerHeight;
 
   // Если прокручено больше чем один экран
+  if (scrollPosition > screenHeight / 2) {
+    header.classList.add('_scrolled2');
+  } else {
+    header.classList.remove('_scrolled2');
+  }
+
   if (scrollPosition > screenHeight) {
     header.classList.add('_scrolled');
   } else {

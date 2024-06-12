@@ -4113,6 +4113,7 @@
     function checkScroll() {
         var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
         var screenHeight = window.innerHeight;
+        if (scrollPosition > screenHeight / 2) header.classList.add("_scrolled2"); else header.classList.remove("_scrolled2");
         if (scrollPosition > screenHeight) header.classList.add("_scrolled"); else header.classList.remove("_scrolled");
         if (scrollPosition > 1.25 * screenHeight) header.classList.add("_show"); else header.classList.remove("_show");
     }

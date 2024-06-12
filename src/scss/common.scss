@@ -194,6 +194,11 @@ section {
   &:first-child {
     @include adaptiveValue("margin-top", 61, 16);
   }
+
+  &.small-margin {
+    @include adaptiveValue("margin-top", 80, 54);
+    @include adaptiveValue("margin-bottom", 80, 54);
+  }
 }
 
 h,
@@ -227,8 +232,6 @@ h,
 }
 
 ._heading {
-  text-align: center;
-
   &:not(:last-child) {
     @include adaptiveValue("margin-bottom", 80, 32);
   }
@@ -330,10 +333,12 @@ video {
     }
   }
 
-  .wp-block-quote {
-    cite {
-      opacity: 0.6;
-    }
+  blockquote {
+    margin: rem(20) 0;
+    padding: rem(20);
+    background-color: rgba($color: $MattGlass, $alpha: 0.9);
+    border-radius: rem(8);
+    overflow: hidden;
   }
 
   figure {
@@ -393,10 +398,10 @@ video {
   }
 
   :first-child {
-    margin-top: 0;
+    margin-top: 0 !important;
   }
   :last-child {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
   }
 }
 
@@ -532,4 +537,46 @@ video {
 
 .swiper-pagination-total {
   color: rgba($color: $mainColor, $alpha: 0.5);
+}
+
+// Хлебные крошки
+.site-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: rem(12);
+  font-size: rem(12);
+  line-height: 130%;
+  position: relative;
+  z-index: 1;
+
+  @media (max-width: $mobile) {
+    padding-top: rem(32);
+  }
+
+  // .site-breadcrumbs__link
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    color: rgba($color: $mainColor, $alpha: 0.5);
+
+    &:not(:first-child) {
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+
+  // .site-breadcrumbs__separator
+  &__separator {
+    color: rgba($color: $mainColor, $alpha: 0.5);
+  }
+
+  // .site-breadcrumbs__title
+  &__title {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 }

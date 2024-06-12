@@ -38,7 +38,6 @@
 .header {
 	position: relative;
 	z-index: 10;
-	transition: $transition ease all 0s;
 
 	// .header__container
 	&__container {
@@ -51,11 +50,33 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		gap: rem(20);
+		@include adaptiveValue("gap", 20, 16);
 	}
 
 	// .header__left
 	&__left {
+		display: flex;
+		align-items: center;
+	}
+
+	// .header__logo
+	&__logo {
+		@media (min-width: $mobile) {
+			@include adaptiveValue("max-width", 196, 100, 1640, 768, 1);
+
+			&:not(:last-child) {
+				@include adaptiveValue("margin-right", 42, 20, 1640, 992, 1);
+			}
+		}
+		@media (max-width: $mobile) {
+			margin-bottom: rem(32);
+		}
+
+		.home & {
+			@media (min-width: $mobile) {
+				display: none;
+			}
+		}
 	}
 
 	// .header__menu
@@ -65,13 +86,14 @@
 				ul {
 					display: flex;
 					align-items: center;
-					@include adaptiveValue("margin-left", -15, -10);
-					@include adaptiveValue("margin-right", -15, -10);
+					@include adaptiveValue("margin-left", -15, -10, 1140, 992, 1);
+					@include adaptiveValue("margin-right", -15, -10, 1140, 992, 1);
 				}
 
 				li {
-					@include adaptiveValue("padding-left", 10, 5);
-					@include adaptiveValue("padding-right", 10, 5);
+					@include adaptiveValue("padding-left", 10, 5, 1140, 992, 1);
+					@include adaptiveValue("padding-right", 10, 5, 1140, 992, 1);
+					@include adaptiveValue("font-size", 16, 14, 1140, 768, 1);
 				}
 
 				a {
@@ -97,21 +119,21 @@
 				overflow-x: hidden;
 				transition: $transition ease all 0s;
 
-					&::before {
-						content: '';
-						width: 100%;
-						height: rem(88);
-						background-color: $White;
-						position: fixed;
-						top: -100%;
-						left: 0;
-						right: 0;
-						pointer-events: none;
-						visibility: hidden;
-						opacity: 0;
-						z-index: 11;
-						transition: $transition ease all 0s;
-					}
+				&::before {
+					content: "";
+					width: 100%;
+					height: rem(88);
+					background-color: $White;
+					position: fixed;
+					top: -100%;
+					left: 0;
+					right: 0;
+					pointer-events: none;
+					visibility: hidden;
+					opacity: 0;
+					z-index: 11;
+					transition: $transition ease all 0s;
+				}
 
 				.menu-open & {
 					top: 0;
@@ -161,7 +183,12 @@
 
 	// .header__contacts
 	&__contacts {
+		font-weight: 600;
 		font-size: rem(16);
+
+		@media (max-width: $tablet) {
+			@include adaptiveValue("font-size", 16, 14, 1140, 992, 1);
+		}
 
 		.contacts__link_phone {
 			@media (max-width: $mobile) {
@@ -184,6 +211,11 @@
 		color: $White;
 	}
 
+	&._scrolled2 {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+
 	&._scrolled {
 		position: sticky;
 		top: 0;
@@ -191,6 +223,7 @@
 		color: $mainColor;
 		transform: translateY(-100%);
 		opacity: 0;
+		transition: 0.8s ease opacity, 0.8s transform 0s;
 	}
 
 	&._show {
@@ -225,6 +258,8 @@
 
 	// .contacts__link
 	&__link {
+		white-space: nowrap;
+
 		// .contacts__link_phone
 		&_phone {
 		}
